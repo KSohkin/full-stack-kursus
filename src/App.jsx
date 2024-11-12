@@ -18,15 +18,11 @@ const Footer = () => {
 }
 
 const App = () => {
-  const friends = [
-    { name: 'Gerten', age: 10},
-    { name: 'Aleks', age: 12}
-  ]
+  const friends = ["Kaupo Sohkin", "Gerten Pilv"]
 
   return (
     <div>
-      <p>{friends[0]}</p>
-      <p>{friends[1]}</p>
+      <p>{friends}</p>
     </div>
   )
 }
