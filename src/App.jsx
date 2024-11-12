@@ -9,7 +9,7 @@ const Hello = (props) => {
   )
 }
 
-const footer = () => {
+const Footer = () => {
   return(
     <div>
       greeting app created by <a href="https://github.com/KSohkin">Ksohkin</a>
@@ -26,6 +26,7 @@ const App = () => {
       <h1>Greetings</h1>
       <Hello name='Gerten' age={26 + 10} />
       <Hello name={name} age={age} />
+      <Footer />
     </div>
   )
 }
