@@ -9,6 +9,14 @@ const Hello = (props) => {
   )
 }
 
+const footer = () => {
+  return(
+    <div>
+      greeting app created by <a href="https://github.com/KSohkin">Ksohkin</a>
+    </div>
+  )
+}
+
 const App = () => {
   const name = 'José Mourinho'
   const age = 10
