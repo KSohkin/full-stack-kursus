@@ -1,78 +1,39 @@
-/*
-const Header = (props) => {
-  console.log(props)
-  return (
-    <h1>{props.course}</h1>
-  )
-}
+import { useState } from "react"
 
-const Content = (props) => {
-  return (
-    <p>{props.part} {props.exercise}</p>
-  )
-}
-const Total= (props) => {
-  return (
-    <p>Number of exercises {props.ex1 + props.ex2 + props.ex3}</p>
-  )
-}
+const Display = ({ counter }) => <div>{counter}</div>
 
+const Button = ({ onClick, text }) => (
+  <button onClick={onClick}>
+    {text}
+  </button>
+)
 
 const App = () => {
-  const course = {
-    name: 'Half Stack application development',
-    parts: [
-      {
-        name: 'Fundamentals of React',
-        exercises: 10
-      },
-      {
-        name: 'Using props to pass data',
-        exercises: 7
-      },
-      {
-        name: 'State of a component',
-        exercises: 14
-      }
-    ]
+  const [counter, setCounter] = useState(0)
+  console.log('rendering with counter value', counter)
+
+  const increasesByOne = () => {
+    console.log('increasing, value before', counter)
+    setCounter(counter + 1)
   }
 
-  return (
-    <div>
-      <Header course={course.name} />
-      <Content part={course.parts[0].name} exercise={course.parts[0].exercises} />
-      <Content part={course.parts[1].name} exercise={course.parts[1].exercises} />
-      <Content part={course.parts[2].name} exercise={course.parts[2].exercises} />
-      <Total ex1={course.parts[0].exercises} ex2={course.parts[1].exercises} ex3={course.parts[2].exercises} />
-    </div>
-  )
-}
-*/
-const Hello = ({name, age}) => {
-    const bornYear = () => new Date().getFullYear() - age
-    
-  return (
-    <div>
-      <p>
-        Hello {name}, you are {age} years old
-      </p>
-      <p>So you were probably born in {bornYear()}</p>
-    </div>
-  )
-}
+  const decreasesByOne = () => {
+    console.log('decreasing, value before', counter)
+    setCounter(counter - 1)
+  }
+    const setToZero = () => {
+      console.log('resetting to zero, value before', counter)
+      setCounter(0)
+    }
 
-const App = () => {
-  const name = "Kakku"
-  const age = 10
-
-  return (
-    <div>
-      <h1>Greetings</h1>
-      <Hello name = "Geryen" age={26+ 10} />
-      <Hello name ={name} age={age} />
-    </div>
-  )
+    return (
+      <div>
+        <Display counter = {counter} />
+        <Button onClick={increasesByOne} text="+"/>
+        <Button onClick={setToZero} text="0"/>
+        <Button onClick={decreasesByOne} text="-"/>
+      </div>
+    )
 }
-
 
 export default App
